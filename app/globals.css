@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #6c63ff;
+  --color-secondary: #ff6584;
+  --color-accent: #43c6ac;
+  --color-background: #fafafa;
+  --color-surface: #ffffff;
+  --color-text-dark: #1a1a2e;
+  --color-text-gray: #6b7280;
+  --color-border: #e5e7eb;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --font-inter: Inter, "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+  --font-fira: "Fira Code", "Cascadia Code", "Courier New", monospace;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-fira);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  line-height: 1.6;
+}
+
+.button {
+  border-radius: 8px;
+  font-weight: 600;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.button-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.button-primary:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+.button-outline {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: white;
+}
+
+.button-ghost {
+  color: var(--color-text-dark);
+  background: transparent;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.pill {
+  border-radius: 20px;
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
