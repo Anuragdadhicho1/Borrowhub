@@ -1,9 +1,9 @@
 import { NextFunction, Response } from 'express';
-import { AnyZodObject, ZodError } from 'zod';
+import { ZodError, ZodType } from 'zod';
 import { HttpError } from '../errors';
 import { AuthenticatedRequest } from '../types';
 
-export function validateBody(schema: AnyZodObject) {
+export function validateBody(schema: ZodType) {
   return (req: AuthenticatedRequest, _res: Response, next: NextFunction) => {
     try {
       req.body = schema.parse(req.body);

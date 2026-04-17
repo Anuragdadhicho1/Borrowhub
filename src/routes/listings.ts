@@ -48,6 +48,11 @@ listingsRouter.patch(
       throw new HttpError(400, 'Listing id must be a number');
     }
 
+    const existingListing = await prisma.listing.findUnique({ where: { id } });
+    if (!existingListing) {
+      throw new HttpError(404, 'Listing not found');
+    }
+
     const listing = await prisma.listing.update({
       where: { id },
       data: req.body

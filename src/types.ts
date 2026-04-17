@@ -1,3 +1,4 @@
+import { Request } from 'express';
 import { UserRole } from '@prisma/client';
 
 export type AuthUser = {
@@ -6,6 +7,6 @@ export type AuthUser = {
   role: UserRole;
 };
 
-export type AuthenticatedRequest = Express.Request & {
+export type AuthenticatedRequest = Request & {
   user?: AuthUser;
 };
